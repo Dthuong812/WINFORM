@@ -12,67 +12,54 @@ namespace WindowsForms
 
         private void SecurityPanel_Load(object sender, EventArgs e)
         {
-
         }
 
-        //Xử lý khi nhấn các nút số
-        private void NumberButton_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn != null)
-            {
-                txtAccessCode.Text += btn.Text;
-            }
-        }
 
-        private void CheckAccessCode(string code)
-        {
-            string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            string group = "";
-            string status = "Access Denied";
-
-            if (code == "1645" || code == "1689")
-            {
-                group = "Technicians";
-                status = "Access Granted";
-            }
-            else if (code == "8345")
-            {
-                group = "Custodians";
-                status = "Access Granted";
-            }
-            else if (code == "9998" || (int.TryParse(code, out int num) && num >= 1006 && num <= 1008))
-            {
-                group = "Scientists";
-                status = "Access Granted";
-            }
-            else if (code.Length == 1)
-            {
-                status = "Restricted Access";
-            }
-
-            DisplayResult(currentTime, group, status);
-        }
-
-        private void DisplayResult(string time, string group, string status)
-        {
-            textBox1.AppendText($"Time: {time} | Group: {group} | Status: {status}\r\n");
-        }
-
-        private void btnCheckAccess_Click_1(object sender, EventArgs e)
-        {
-            CheckAccessCode(txtAccessCode.Text);
-            txtAccessCode.Clear();
-        }
-
+        // Xử lý khi nhấn nút `C` (xoá code)
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtAccessCode.Clear();
+            txtSecurityCode.Clear();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
+            if (sender is Button btn)
+            {
+                txtSecurityCode.Text += btn.Text;
+            }
+        }
+        // Xử lý khi nhấn nút `#` (kiểm tra quyền truy cập)
 
+        private void btnEnter_Click_1(object sender, EventArgs e)
+        {
+            string code = txtSecurityCode.Text;
+            string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string group;
+
+            switch (code)
+            {
+                case "1645":
+                case "1689":
+                    group = "Technicians";
+                    break;
+                case "8345":
+                    group = "Custodians";
+                    break;
+                case "9998":
+                case "1006":
+                case "1008":
+                    group = "Scientists";
+                    break;
+                default:
+                    group = "Restricted Access!";
+                    break;
+            }
+
+            // Lưu vào ListBox
+            listBoxAccessLog.Items.Add($"{currentTime} {group}");
+
+            // Xoá code nhập vào
+            txtSecurityCode.Clear();
         }
     }
 }

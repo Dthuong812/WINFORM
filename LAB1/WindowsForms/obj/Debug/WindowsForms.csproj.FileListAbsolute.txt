@@ -1,0 +1,13 @@
+D:\WFNC\LAB1\WindowsForms\bin\Debug\WindowsForms.exe.config
+D:\WFNC\LAB1\WindowsForms\bin\Debug\WindowsForms.exe
+D:\WFNC\LAB1\WindowsForms\bin\Debug\WindowsForms.pdb
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.csproj.AssemblyReference.cache
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.Properties.Resources.resources
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.cache
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.csproj.CoreCompileInputs.cache
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.exe
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.pdb
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.Frm1.resources
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.frm2.resources
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.FrmLogin.resources
+D:\WFNC\LAB1\WindowsForms\obj\Debug\WindowsForms.SecurityPanel.resources
